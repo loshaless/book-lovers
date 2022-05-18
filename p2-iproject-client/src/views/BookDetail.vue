@@ -1,9 +1,9 @@
 <template>
-    <div class="container">
-      <br>
-      <br>
-      <br>
-      <br>
+  <div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
     <div v-if="isLoading" class="container">
       <img class="loadingGif" src="@/assets/loading.gif" alt="loadingGif">
     </div>
@@ -15,33 +15,33 @@
             <div class="row">
               <div class="col-7">
                 <img :src="book.bookImage" class="w-100"
-                  alt="">
+                     alt="">
               </div>
               <!-- data detail buku -->
               <div class="col-5">
                 <!-- ICON PLAY -->
                 <p class="h2 mb-2">
                   <b-icon
-                  class="me-2 zoomPlay"
-                  icon="play-circle-fill"
-                  variant="success"
-                  style="cursor: pointer"
-                  @click.prevent="speak(book.title, book.description)">
+                    class="me-2 zoomPlay"
+                    icon="play-circle-fill"
+                    variant="success"
+                    style="cursor: pointer"
+                    @click.prevent="speak(book.title, book.description)">
                   </b-icon>
                   <b-icon
-                  icon="stop-fill"
-                  class="zoomPlay"
-                  variant="danger"
-                  style="cursor: pointer"
-                  @click.prevent="stopSpeak()">
+                    icon="stop-fill"
+                    class="zoomPlay"
+                    variant="danger"
+                    style="cursor: pointer"
+                    @click.prevent="stopSpeak()">
                   </b-icon>
                 </p>
                 <!-- AKHIR ICON PLAY -->
-                <h5 class="card-title">{{book.title}}</h5>
-                <p class="card-text">{{book.description}}</p>
-                <span class="card-text"><strong>Author: </strong>{{book.author}}</span><br>
-                <span class="card-text"><strong>Publisher: </strong>{{book.publisher}}</span><br>
-                <p class="card-text"><strong>ISBN: </strong>{{book.isbn}}</p>
+                <h5 class="card-title">{{ book.title }}</h5>
+                <p class="card-text">{{ book.description }}</p>
+                <span class="card-text"><strong>Author: </strong>{{ book.author }}</span><br>
+                <span class="card-text"><strong>Publisher: </strong>{{ book.publisher }}</span><br>
+                <p class="card-text"><strong>ISBN: </strong>{{ book.isbn }}</p>
                 <p>Buy :<a :href="book.productURL" target="_blank"> Amazon </a></p>
               </div>
             </div>
@@ -53,11 +53,12 @@
                 <div class="card bg-dark">
                   <div class="card-header">
                     <a v-if="!liked" @click="addLike(book.isbn)" class="btn btn-success fs-5 w-100">Like This Book</a>
-                    <a v-if="liked" @click.prevent="dislike(book.isbn)" class="btn btn-danger fs-5 w-100">Dislike This Book</a>
+                    <a v-if="liked" @click.prevent="dislike(book.isbn)" class="btn btn-danger fs-5 w-100">Dislike This
+                      Book</a>
                   </div>
                   <div class="card-body ">
                     <h5 v-if="!isLogin" class="text-center text-white">please login first to see this content</h5>
-                    <h3 v-if="isLogin" class="text-center text-white">{{jumlahLike}} People</h3>
+                    <h3 v-if="isLogin" class="text-center text-white">{{ jumlahLike }} People</h3>
                     <p v-if="isLogin" class="text-center text-white"> like this book</p>
                   </div>
                 </div>
@@ -66,13 +67,15 @@
               <div class="col-6">
                 <div class="card bg-dark">
                   <div class="card-header">
-                    <a v-if="!wished" @click="addWishLists(book.isbn)" class="btn btn-info fs-5 w-100">Add To Wishlist</a>
-                    <a v-if="wished" @click="deleteWishlist(book.isbn)" class="btn btn-danger fs-5 w-100">Remove Wishlist</a>
+                    <a v-if="!wished" @click="addWishLists(book.isbn)" class="btn btn-info fs-5 w-100">Add To
+                      Wishlist</a>
+                    <a v-if="wished" @click="deleteWishlist(book.isbn)" class="btn btn-danger fs-5 w-100">Remove
+                      Wishlist</a>
                   </div>
                   <div class="card-body ">
                     <span></span>
                     <h5 v-if="!isLogin" class="text-center text-white">please login first to see this content</h5>
-                    <h3 v-if="isLogin" class="text-center text-white">{{jumlahWish}} People</h3>
+                    <h3 v-if="isLogin" class="text-center text-white">{{ jumlahWish }} People</h3>
                     <p v-if="isLogin" class="text-center text-white">wish to have this book </p>
                   </div>
                 </div>
@@ -94,36 +97,36 @@
       <div class="col-6">
         <div class="card overflow-auto text-white text-center bg-secondary mb-3" style="max-height:80vh">
           <div class="card-header fs-5"><!-- ICON PLAY -->
-                <span class="h4 me-2">
+            <span class="h4 me-2">
                   <b-icon
-                  icon="play-circle-fill"
-                  variant="primary"
-                  class="zoomPlay"
-                  style="cursor: pointer"
-                  @click.prevent="speakComments(comments)">
+                    icon="play-circle-fill"
+                    variant="primary"
+                    class="zoomPlay"
+                    style="cursor: pointer"
+                    @click.prevent="speakComments(comments)">
                   </b-icon>
                 </span>
-                <span class="h3 me-2">
+            <span class="h3 me-2">
                   <b-icon
-                  icon="stop-fill"
-                  class="zoomPlay"
-                  variant="danger"
-                  style="cursor: pointer"
-                  @click.prevent="stopSpeak()">
+                    icon="stop-fill"
+                    class="zoomPlay"
+                    variant="danger"
+                    style="cursor: pointer"
+                    @click.prevent="stopSpeak()">
                   </b-icon>
                 </span>
-                <!-- AKHIR ICON PLAY -->
-                Apa Kata Orang-Orang? <span class="text-secondary">etasdfdf</span>
+            <!-- AKHIR ICON PLAY -->
+            Apa Kata Orang-Orang? <span class="text-secondary">etasdfdf</span>
           </div>
           <div class="card-body">
             <div v-if="isLogin">
-            <!-- LOOPING DISINI -->
+              <!-- LOOPING DISINI -->
               <CommentCard
-              v-for="comment in comments"
-              :key="comment.id"
-              :comment="comment"
+                v-for="comment in comments"
+                :key="comment.id"
+                :comment="comment"
               />
-            <!-- BERHENTI LOOPING DISINI -->
+              <!-- BERHENTI LOOPING DISINI -->
             </div>
             <!-- JIKA BELUM LOGIN -->
             <div v-if="!isLogin" class="card text-dark bg-light mb-3">
@@ -137,13 +140,14 @@
         </div>
       </div>
     </div>
-      <br>
+    <br>
   </div>
 </template>
 
 <script>
 import { BIcon } from 'bootstrap-vue'
 import CommentCard from '../components/CommentCard'
+
 export default {
   data () {
     return {
@@ -199,6 +203,7 @@ export default {
       msg.rate = 0.8
       msg.lang = 'id'
       const list = []
+
       for (let i = 0; i < array.length; i++) {
         list.push(`kata ${array[i].username} . ${array[i].comment}`)
       }
@@ -261,6 +266,7 @@ export default {
 .zoomPlay:hover {
   transform: scale(1.4);
 }
+
 .loadingGif {
   width: 100%;
   height: auto;

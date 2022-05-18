@@ -1,11 +1,11 @@
-var express = require('express')
+let express = require('express')
 const BookController = require('../controller/bookController')
 const NYTimes = require('../controller/NYTimesController')
 const userController = require('../controller/userController')
 const favouriteBookController = require('../controller/favouriteBookController')
 const authentication = require('../middleware/authentication')
 const authorization = require('../middleware/authorization')
-var router = express.Router()
+let router = express.Router()
 
 router.post('/register', userController.register)
 router.post('/login', userController.login)

@@ -91,13 +91,13 @@ export default new Vuex.Store({
           })
         })
     },
-    register (context, payload) {
+    register (_context, payload) {
       axios({
         method: 'POST',
         url: '/register',
         data: payload
       })
-        .then(response => {
+        .then(() => {
           Swal.fire({
             title: 'Success',
             text: 'Registrasi berhasil',
@@ -154,7 +154,7 @@ export default new Vuex.Store({
           })
         })
     },
-    fetchWishlists (context, payload) {
+    fetchWishlists (context, _payload) {
       axios({
         method: 'GET',
         url: '/favouriteBooks',
@@ -209,7 +209,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchWishLikeAmount', payload.isbn)
           context.dispatch('fetchWishlists')
           if (payload.category) {
@@ -234,7 +234,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchWishLikeAmount', payload.isbn)
         })
         .catch(err => {
@@ -255,7 +255,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchWishLikeAmount', payload.isbn)
         })
         .catch(err => {
@@ -276,7 +276,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchComments', payload.isbn)
         })
         .catch(err => {
@@ -297,7 +297,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchComments', payload.isbn)
         })
         .catch(err => {
@@ -318,7 +318,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchComments', payload)
         })
         .catch(err => {
@@ -338,7 +338,7 @@ export default new Vuex.Store({
           token: localStorage.getItem('token')
         }
       })
-        .then(response => {
+        .then(() => {
           context.dispatch('fetchWishlists')
           context.dispatch('fetchWishLikeAmount', payload)
         })
@@ -352,6 +352,5 @@ export default new Vuex.Store({
         })
     }
   },
-  modules: {
-  }
+  modules: {}
 })

@@ -1,18 +1,18 @@
 <template>
-      <!-- START FORM LOGIN -->
+  <!-- START FORM LOGIN -->
   <form @submit.prevent="login">
     <div class="container">
       <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row text-center">
-       <h1 class="display-1 text-primary">Welcome to Book Lovers</h1>
-    </div>
-    <div class="row d-flex" style="align-items: center ">
-      <div class="col-4">
-        <h3 class="mb-4 text-success">Log In</h3>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="row text-center">
+        <h1 class="display-1 text-primary">Welcome to Book Lovers</h1>
+      </div>
+      <div class="row d-flex" style="align-items: center ">
+        <div class="col-4">
+          <h3 class="mb-4 text-success">Log In</h3>
           <div class="mb-3 col-9">
             <label class="form-label">Email address</label>
             <input v-model="email" type="email" class="form-control">
@@ -22,16 +22,20 @@
             <input v-model="password" type="password" class="form-control">
           </div>
           <div class="d-flex">
-            <button type="submit" class="btn btn-primary" style="width:250px; height:40px">Sign In</button><br>
+            <button type="submit" class="btn btn-primary" style="width:250px; height:40px">Sign In</button>
+            <br>
           </div>
           <div class="d-flex">
-            <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess" :onFailure="onFailure"></GoogleLogin>
+            <GoogleLogin :params="params" :renderParams="renderParams" :onSuccess="onSuccess"
+                         :onFailure="onFailure"></GoogleLogin>
           </div>
+        </div>
+        <div class="col-8 text-center">
+          <img
+            src="https://cdn.dribbble.com/users/24158/screenshots/14414173/media/0ba2af910e5a71b94ef5af77b730f134.jpg?compress=1&resize=1000x750"
+            style="" alt="">
+        </div>
       </div>
-      <div class="col-8 text-center">
-        <img src="https://cdn.dribbble.com/users/24158/screenshots/14414173/media/0ba2af910e5a71b94ef5af77b730f134.jpg?compress=1&resize=1000x750" style="" alt="">
-      </div>
-    </div>
 
     </div>
   </form>
@@ -41,6 +45,7 @@
 <script>
 import GoogleLogin from 'vue-google-login'
 import Swal from 'sweetalert2'
+
 export default {
   name: 'App',
   data () {

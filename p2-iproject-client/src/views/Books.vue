@@ -12,18 +12,19 @@
       <div class="row">
         <div class="col-9 mb-2">
           <a class="btn btn-link text-dark fs-5" style="display: inline-block">Search By Title:</a>
-          <input v-model = "searchByTitle" type="text" class="form-control fs-5" aria-describedby="inputGroup-sizing-sm" placeholder="type the title....." style="display: inline-block; width:25vw">
+          <input v-model="searchByTitle" type="text" class="form-control fs-5" aria-describedby="inputGroup-sizing-sm"
+                 placeholder="type the title....." style="display: inline-block; width:25vw">
         </div>
         <div class="col-3 mb-2 text-end">
-          <a class="btn btn-success text-white fs-5" @click="$router.push({name : 'Home'})" >Search By Category</a>
+          <a class="btn btn-success text-white fs-5" @click="$router.push({name : 'Home'})">Search By Category</a>
         </div>
       </div>
       <div class="row mt-3" id="catalogCard">
         <!-- awal loop -->
         <BookCard
-        v-for="book in books"
-        :key=book.id
-        :book="book"
+          v-for="book in books"
+          :key=book.id
+          :book="book"
         />
         <!-- akhir loop -->
       </div>
@@ -34,6 +35,7 @@
 
 <script>
 import BookCard from '../components/BookCard'
+
 export default {
   data () {
     return {

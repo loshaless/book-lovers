@@ -1,13 +1,13 @@
 <template>
   <div class="card text-dark bg-light mb-3">
-    <div class="card-header">Username : {{comment.username}}</div>
+    <div class="card-header">Username : {{ comment.username }}</div>
     <div class="card-body" v-if="!bukaEditor">
-      <h5 class="card-title">{{comment.comment}}</h5>
+      <h5 class="card-title">{{ comment.comment }}</h5>
     </div>
     <div class="input-group" v-if="bukaEditor">
       <textarea v-model="commentInEditor" class="form-control text-center" aria-label="With textarea"></textarea>
     </div>
-    <div class="card-footer"  v-if="comment.username==username">
+    <div class="card-footer" v-if="comment.username==username">
       <button v-if="!bukaEditor" @click.prevent="openEditor()" class="btn-warning">Edit My Comment</button>
       <button v-if="!bukaEditor" @click.prevent="deleteComment()" class="btn-danger ms-4">Delete My Comment</button>
       <button v-if="bukaEditor" @click.prevent="editComment()" class="btn-warning">Submit</button>
