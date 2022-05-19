@@ -6,5 +6,5 @@ Tech used on client: html, css, javascript, Vue.js, Vuex <br/>
 Deployed at: https://book-lovers-hansel.web.app/
 
 For Testing: <br/>
-email: admin@mail.com
+email: admin@mail.com <br/>
 password: admin
